@@ -5,8 +5,7 @@ import { CamperService } from './camper.service';
 @ApiTags('Операції з камперами')
 @Controller('camper')
 export class CamperController {
-  constructor(private readonly camperService: CamperService) {
-  }
+  constructor(private readonly camperService: CamperService) {}
 
   @ApiOperation({ summary: 'Отримання камперів' })
   @ApiResponse({ status: 200, description: 'Успішне отримання камперів' })
@@ -14,7 +13,4 @@ export class CamperController {
   async findAll() {
     return await this.camperService.findAll();
   }
-
 }
-
-

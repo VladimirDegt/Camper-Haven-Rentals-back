@@ -11,8 +11,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
     .setTitle('Backend Camper rentals API')
-    .setDescription('API description')
-    .setVersion('0.1')
+    .setDescription('Documentations REST API')
+    .setVersion('1.0.0')
+    .addTag('Volodymyr Dehtiarev')
     .build();
   app.enableCors();
   const document = SwaggerModule.createDocument(app, config);
@@ -23,6 +24,5 @@ async function bootstrap() {
   await app.listen(PORT || 3000, () =>
     console.log(`Server started on port = ${PORT}`),
   );
-
 }
 bootstrap();

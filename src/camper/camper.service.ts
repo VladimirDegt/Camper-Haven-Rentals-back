@@ -10,5 +10,4 @@ export class CamperService {
   async findAll(): Promise<Camper[]> {
     return this.catModel.find().exec();
   }
-
 }
