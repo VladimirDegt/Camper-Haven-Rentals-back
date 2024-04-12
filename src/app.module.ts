@@ -1,11 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { CamperModule } from './camper/camper.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [CamperModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    CamperModule,
+    MongooseModule.forRoot(
+      'mongodb+srv://degtyarevvladimirr:AiiSQHU3b5aKqhNH@camper.5l69e05.mongodb.net/camper?retryWrites=true&w=majority',
+    ),
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

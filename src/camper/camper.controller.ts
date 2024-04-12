@@ -12,8 +12,9 @@ export class CamperController {
   @ApiResponse({ status: 200, description: 'Успішне отримання камперів' })
   @Get('all')
   async findAll() {
-    return await this.camperService.getAllCampers();
+    return await this.camperService.findAll();
   }
+
 }
 
 
