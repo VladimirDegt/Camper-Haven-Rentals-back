@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CamperController } from './camper.controller';
 import { CamperService } from './camper.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Camper, CamperSchema } from '../schemas/camper.schema';
+import { Camper, CamperSchema } from './camper.schema';
 
 @Module({
   imports: [
