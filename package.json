@@ -1,10 +1,10 @@
 {
-  "name": "kpmic-vchasno-back",
+  "name": "Camper rentals",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Website specialize in camper rentals, offering a range of services to enhance your adventure",
+  "author": "Volodymyr Deghtiarev <degtyarevvladimirr@gmail.com>",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
