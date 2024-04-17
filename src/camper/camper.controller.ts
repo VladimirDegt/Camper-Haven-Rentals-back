@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CamperService } from './camper.service';
 
 @ApiTags('Операції з камперами')
@@ -16,6 +16,7 @@ export class CamperController {
 
   @ApiOperation({ summary: 'Додати улюблений кампер' })
   @ApiResponse({ status: 201, description: 'Створений кампер' })
+  @ApiBody({ type: 'itemFavorite:  "661e375e39c3f29e8c46b950"'})
   @Post('create')
   async createFavorite(@Body() favoriteData: any) {
     return await this.camperService.createFavorite(favoriteData);
@@ -23,6 +24,7 @@ export class CamperController {
 
   @ApiOperation({ summary: 'Видалити улюблений кампер' })
   @ApiResponse({ status: 200, description: 'Видалений кампер' })
+  @ApiParam({ name: 'id', description: 'Ідентифікатор улюбленого кампера' })
   @Delete('delete/:id')
   async removeFavorite(@Param('id') favoriteId: string) {
     return await this.camperService.deleteFavorite(favoriteId);
